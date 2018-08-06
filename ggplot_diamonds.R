@@ -54,3 +54,9 @@ summary(eco)
 ?economics
 
 ggplot(eco )+geom_line(aes(x= date, y = pce ,color = "pce")) + geom_line(aes(x = date, y =unemploy, color = "umemploy" ))+scale_color_discrete(name = "Legend" )+ labs(title="Economics") 
+
+#or
+
+df<-reshape2::melt(data = economics[, c("date", "pce", "unemploy")], id="date")
+head(df)
+ggplot(df)+geom_line(aes(x=date, y = value, color = variable))+labs(title="Economics")
