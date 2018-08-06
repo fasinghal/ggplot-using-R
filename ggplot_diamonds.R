@@ -28,3 +28,6 @@ gg1 <-gg + theme(
 print(gg1)
 
 #Facet Wrap
+
+gg1+facet_wrap(~cut)
+
