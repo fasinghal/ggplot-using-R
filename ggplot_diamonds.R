@@ -34,3 +34,17 @@ gg1+facet_wrap(color~cut)
 
 
 #Time series Plot using ggplot
+install.packages("ggfortify")
+library(ggfortify)
+
+#Convert Airpassengers to a matrix for manipulation if rquired
+
+ap.df <-matrix(data = c(AirPassengers), nrow = 12, ncol = 12)
+row.names(ap.df)<-seq(from = 1949, to= 1960, by=1 )
+colnames(ap.df)<-seq(from = 1 , to = 12, by =1)
+
+ggplot2::autoplot(AirPassengers)
+AirPassengers
+class(AirPassengers)
+
+
