@@ -27,7 +27,10 @@ gg1 <-gg + theme(
     scale_color_discrete(name="Cut of diamonds") # changes the legend title if the legend is based on color attribute
 print(gg1)
 
-#Facet Wrap
+#Facets
 
-gg1+facet_wrap(~cut)
+gg1+facet_grid(color~cut)
+gg1+facet_wrap(color~cut)
 
+
+#Time series Plot using ggplot
