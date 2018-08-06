@@ -45,4 +45,12 @@ colnames(ap.df)<-seq(from = 1 , to = 12, by =1)
 
 ggplot2::autoplot(AirPassengers , ts.colour = "red")+labs(title="AirPassengers")
 
+#Plot multiple timeseries on same ggplot
 
+data(economics, package="ggplot2")
+
+eco<-data.frame(economics)
+summary(eco)
+?economics
+
+ggplot(eco )+geom_line(aes(x= date, y = pce ,color = "pce")) + geom_line(aes(x = date, y =unemploy, color = "umemploy" ))+scale_color_discrete(name = "Legend" )+ labs(title="Economics") 
